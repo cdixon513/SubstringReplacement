@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class SubstringReplacement{
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
-		Scanner reader = new Scanner(System.in);
 		String string, substring, replacement;
 		int position;
 		System.out.print("Enter a long string: ");
@@ -24,7 +23,8 @@ public class SubstringReplacement{
 		System.out.printf("Character at position " + position + ":    " + "%10s\n", string.charAt(position));
 		System.out.println();
 		System.out.print("Enter a replacement string: ");
-		replacement = reader.nextLine();
+		scanner.nextLine(); //gets rid of left over escape character from gathering the int above
+		replacement = scanner.nextLine();
 		System.out.println();
 		System.out.printf("Your new string is:         %10s\n", string.replace(substring, replacement));
 	}
